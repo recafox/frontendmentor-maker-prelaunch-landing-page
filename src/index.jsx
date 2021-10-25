@@ -9,6 +9,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-
-// "homepage": "https://recafox.github.io/frontendmentor-maker-prelaunch-landing-page",

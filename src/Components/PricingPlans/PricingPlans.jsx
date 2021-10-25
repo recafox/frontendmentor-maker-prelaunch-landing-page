@@ -1,7 +1,7 @@
 import SectionTitle from "../SectionTitle";
 import { StyledParagraph } from "../Styled/Paragraph.styled";
 import PlanCard from "./PlanCard";
-import { CardContainer, PlanContainer } from "./Styled";
+import { CardContainer, PlanContainer, StyledTitleGroup } from "./Styled";
 
 const plans = [
   {
@@ -24,7 +24,7 @@ const plans = [
     title: "Dive right in",
     description: "Ready for the big time? Our paid plan will help you take your business to the next level.",
     fee: {
-      amount: 25.00,
+      amount: "25.00",
       per: "month"
     },
     features: [
@@ -40,14 +40,16 @@ const plans = [
 
 const PricingPlans = (props) => {
   const renderPlans = () => {
-    return plans.map((plan, index) => <PlanCard key={index} item={plan} tone={index % 2 === 0 && 'darkBlue'} isLarger={index % 2 !== 0}/>);
+    return plans.map((plan, index) => <PlanCard className="price-plan-card" key={index} item={plan} tone={index % 2 === 0 && 'darkBlue'} isLarger={index % 2 !== 0}/>);
   }
   return (
     <PlanContainer {...props}>
-      <SectionTitle text="Our pricing plans" />
-      <StyledParagraph>
-        We only make money when our creators make money. Our plans are always affordable, and it’s completely free to get started.
-      </StyledParagraph>
+      <StyledTitleGroup>
+        <SectionTitle text="Our pricing plans" />
+        <StyledParagraph>
+          We only make money when our creators make money. Our plans are always affordable, and it’s completely free to get started.
+        </StyledParagraph>
+      </StyledTitleGroup>
       <CardContainer>
         {renderPlans()}
       </CardContainer>

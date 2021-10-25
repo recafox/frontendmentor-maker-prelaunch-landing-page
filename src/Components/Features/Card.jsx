@@ -1,13 +1,17 @@
-import { StyledCard } from './Styled';
+import { StyledCard, StyledTextGroup, StyledImgCard } from './Styled';
 import { StyledParagraph } from '../Styled/Paragraph.styled';
-const Card = ({ item, isLower }) => {
+const Card = (props) => {
+  const { item } = props;
+  const { isEven } = props;
   return (
-    <StyledCard isLower={isLower} className="feature-card">
-      <div>
+    <StyledCard isEven={isEven} className={`feature-card ${props.className}`}>
+      <StyledImgCard>
         <img src={`./assets/${item.image}`} alt="" />
-      </div>
-      <h4>{item.title}</h4>
-      <StyledParagraph>{item.content}</StyledParagraph>
+      </StyledImgCard>
+      <StyledTextGroup>
+        <h4>{item.title}</h4>
+        <StyledParagraph>{item.content}</StyledParagraph>
+      </StyledTextGroup>
     </StyledCard>
   )
 }

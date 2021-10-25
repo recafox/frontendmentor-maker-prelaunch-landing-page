@@ -25,9 +25,10 @@ const features = [
 ];
 
 const Features = (props) => {
+  const isTablet = window.innerWidth <= 768 ? true : false;
 
   const renderCards = () => {
-    return features.map((feature, index) => <Card item={feature} key={index} isLower={index % 2 !== 0}/>)
+    return features.map((feature, index) => <Card item={feature} key={index} isEven={index % 2 !== 0} className={isTablet && 'observer-target'}/>)
   }
 
   return (

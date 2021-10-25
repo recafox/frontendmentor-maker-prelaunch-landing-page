@@ -11,9 +11,9 @@ const PlanCard = (props) => {
     return (
       <>
         <p>
-          $ {item.fee.amount}
+          ${item.fee.amount}
         </p>
-        <small>/ ${item.fee.per}</small>
+        <small>/ {item.fee.per}</small>
       </>
     )
   }
